@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+//| Variables
+$DarkMagenta: hsl(300, 43%, 22%);
+$SoftPink: hsl(333, 80%, 67%);
+$GrayishMagenta: hsl(303, 10%, 53%);
+$LightGrayMagenta: hsl(300, 24%, 96%);
+$White: hsl(0, 0%, 100%);
+$spartan: "Spartan", sans-serif;
+//| Variables
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $spartan;
+}
+section {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url(./images/bg-pattern-top-desktop.svg) left -300px top -200px,
+    url(./images/bg-pattern-bottom-desktop.svg) left 500px top -100px;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-size: contain, contain;
+  .grid-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "caption ratings" "testimonials testimonials";
+    .caption {
+      // background-color: pink;
+      grid-area: caption;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      padding: 3rem 7rem;
+      text-align: left;
+      h1 {
+        padding: 1rem 0;
+        width: 40%;
+      }
+      p {
+        width: 85%;
+      }
+    }
+    .ratings {
+      // background-color: blue;
+      display: flex;
+      justify-content: end;
+      flex-flow: column;
+      grid-area: ratings;
+      .r-1,
+      .r-2,
+      .r-3 {
+        display: flex;
+        align-items: center;
+        background-color: $LightGrayMagenta;
+        width: 70%;
+        padding: 1rem 2rem;
+        margin: 1rem 0;
+        border-radius: 10px;
+        span {
+          // background-color: red;
+          font-weight: bold;
+          padding-left: 2rem;
+          text-align: left;
+        }
+      }
+      .r-2 {
+        margin-left: 2rem;
+      }
+      .r-3 {
+        margin-left: 6rem;
+      }
+    }
+    .testimonials {
+      // background-color: teal;
+      grid-area: testimonials;
+      display: flex;
+      justify-content: space-evenly;
+      flex-flow: row wrap;
+      padding: 0 3rem;
+    }
+    .testimony-1,
+    .testimony-2,
+    .testimony-3 {
+      background-color: $DarkMagenta;
+      width: 350px;
+      height: 250px;
+      padding: 2rem;
+      border-radius: 10px;
+      .user {
+        display: flex;
+        align-items: center;
+        img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+        }
+        .usr-details {
+          padding-left: 1rem;
+          h3 {
+            font-size: 15px;
+            color: $White;
+          }
+          span {
+            font-size: 15px;
+            color: $GrayishMagenta;
+            padding-top: 1rem;
+          }
+        }
+      }
+      p {
+        font-size: 15px;
+        color: $White;
+        padding: 3rem 0;
+      }
+    }
+    .testimony-2 {
+      margin-top: 2rem;
+    }
+    .testimony-3 {
+      margin-top: 4rem;
+    }
+  }
+}
+@media only screen and(max-width:1150px) {
+  .grid-container {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: "caption" "ratings" "testimonials" !important;
+    width: 80% !important;
+    margin: 0 auto;
+  }
+  .r-1,
+  .r-2,
+  .r-3 {
+    margin: 1rem auto !important;
+    gap: 1rem;
+    flex-flow: column;
+    span {
+      padding: 0 !important;
+    }
+  }
+  .caption {
+    align-items: center;    
+    text-align: center !important;
+    padding: 0 !important;
+    h1{
+        width: 80% !important;
+    }
+    p {
+      width: 100% !important;
+    }
+  }
+  .ratings {
+    width: 100%;
+    .r-1,
+    .r-2,
+    .r-3 {
+      width: 100% !important;
+      justify-content: center !important;
+      padding: 1rem 0.5rem !important;
+    }
+  }
+  .testimonials {
+    padding: 0 !important;
+    .testimony-1,
+    .testimony-2,
+    .testimony-3 {
+      width: 100% !important;
+      margin: 1rem 0 !important;
+    }
+  }
+}

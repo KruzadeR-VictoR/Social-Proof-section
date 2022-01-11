@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url(./images/bg-pattern-top-desktop.svg) left -300px top -200px, url(./images/bg-pattern-bottom-desktop.svg) left 500px top -100px;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-size: contain, contain;
+}
+
+section .grid-container {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "caption ratings" "testimonials testimonials";
+}
+
+section .grid-container .caption {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: caption;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding: 3rem 7rem;
+  text-align: left;
+}
+
+section .grid-container .caption h1 {
+  padding: 1rem 0;
+  width: 40%;
+}
+
+section .grid-container .caption p {
+  width: 85%;
+}
+
+section .grid-container .ratings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: ratings;
+}
+
+section .grid-container .ratings .r-1,
+section .grid-container .ratings .r-2,
+section .grid-container .ratings .r-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f7f2f7;
+  width: 70%;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
+section .grid-container .ratings .r-1 span,
+section .grid-container .ratings .r-2 span,
+section .grid-container .ratings .r-3 span {
+  font-weight: bold;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+section .grid-container .ratings .r-2 {
+  margin-left: 2rem;
+}
+
+section .grid-container .ratings .r-3 {
+  margin-left: 6rem;
+}
+
+section .grid-container .testimonials {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: testimonials;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 0 3rem;
+}
+
+section .grid-container .testimony-1,
+section .grid-container .testimony-2,
+section .grid-container .testimony-3 {
+  background-color: #502050;
+  width: 350px;
+  height: 250px;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+section .grid-container .testimony-1 .user,
+section .grid-container .testimony-2 .user,
+section .grid-container .testimony-3 .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .grid-container .testimony-1 .user img,
+section .grid-container .testimony-2 .user img,
+section .grid-container .testimony-3 .user img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+section .grid-container .testimony-1 .user .usr-details,
+section .grid-container .testimony-2 .user .usr-details,
+section .grid-container .testimony-3 .user .usr-details {
+  padding-left: 1rem;
+}
+
+section .grid-container .testimony-1 .user .usr-details h3,
+section .grid-container .testimony-2 .user .usr-details h3,
+section .grid-container .testimony-3 .user .usr-details h3 {
+  font-size: 15px;
+  color: white;
+}
+
+section .grid-container .testimony-1 .user .usr-details span,
+section .grid-container .testimony-2 .user .usr-details span,
+section .grid-container .testimony-3 .user .usr-details span {
+  font-size: 15px;
+  color: #937b92;
+  padding-top: 1rem;
+}
+
+section .grid-container .testimony-1 p,
+section .grid-container .testimony-2 p,
+section .grid-container .testimony-3 p {
+  font-size: 15px;
+  color: white;
+  padding: 3rem 0;
+}
+
+section .grid-container .testimony-2 {
+  margin-top: 2rem;
+}
+
+section .grid-container .testimony-3 {
+  margin-top: 4rem;
+}
+
+@media only screen and (max-width: 1150px) {
+  .grid-container {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+        grid-template-areas: "caption" "ratings" "testimonials" !important;
+    width: 80% !important;
+    margin: 0 auto;
+  }
+  .r-1,
+  .r-2,
+  .r-3 {
+    margin: 1rem auto !important;
+    gap: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .r-1 span,
+  .r-2 span,
+  .r-3 span {
+    padding: 0 !important;
+  }
+  .caption {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  .caption h1 {
+    width: 80% !important;
+  }
+  .caption p {
+    width: 100% !important;
+  }
+  .ratings {
+    width: 100%;
+  }
+  .ratings .r-1,
+  .ratings .r-2,
+  .ratings .r-3 {
+    width: 100% !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    padding: 1rem 0.5rem !important;
+  }
+  .testimonials {
+    padding: 0 !important;
+  }
+  .testimonials .testimony-1,
+  .testimonials .testimony-2,
+  .testimonials .testimony-3 {
+    width: 100% !important;
+    margin: 1rem 0 !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
