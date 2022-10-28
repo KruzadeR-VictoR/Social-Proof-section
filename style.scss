@@ -13,7 +13,7 @@ $spartan: "Spartan", sans-serif;
   box-sizing: border-box;
   font-family: $spartan;
 }
-section {
+main {
   min-height: 100vh;
   min-width: 100vw;
   background: url(./images/bg-pattern-top-desktop.svg) left -300px top -200px,
@@ -99,7 +99,7 @@ section {
         }
         .usr-details {
           padding-left: 1rem;
-          h3 {
+          h1 {
             font-size: 15px;
             color: $White;
           }
